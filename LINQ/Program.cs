@@ -10,12 +10,11 @@ namespace LINQ
         {
             List<Person> personCollection = ListManager.LoadSampleData();
 
-            var query = from p in personCollection
-                        where p.YearsExperience > 10
+            var query = from p in personCollection                       
                         orderby p.YearsExperience ascending
                         select p;
 
-            foreach (var person in personCollection)
+            foreach (var person in query)
             {
                 Console.WriteLine(person.Print);
             }
